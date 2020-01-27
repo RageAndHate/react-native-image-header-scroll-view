@@ -253,6 +253,7 @@ class ImageHeaderScrollView extends Component<Props, State> {
       onScroll,
       scrollViewBackgroundColor,
       useNativeDriver,
+      scrollViewComponentStyle,
       ...scrollViewProps
     } = this.props;
     /* eslint-enable no-unused-vars */
@@ -294,7 +295,7 @@ class ImageHeaderScrollView extends Component<Props, State> {
             contentContainerStyle,
             childrenStyle,
           ]}
-          style={[styles.container, style]}
+          style={[styles.container, style, scrollViewComponentStyle]}
           onScroll={
             useNativeDriver
               ? Animated.event([{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }], {
